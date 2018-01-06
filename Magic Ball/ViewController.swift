@@ -8,8 +8,18 @@
 
 import UIKit
 
+class RoundedButton: UIButton{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.borderWidth = 1/UIScreen.main.nativeScale
+        layer.borderColor = UIColor.white.cgColor
+    }
+}
+
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ballView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
