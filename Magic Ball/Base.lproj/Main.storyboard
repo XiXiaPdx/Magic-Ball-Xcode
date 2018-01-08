@@ -42,12 +42,16 @@ Question</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="tintColor" red="0.23856463185683052" green="1" blue="0.30245558627511948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Ask"/>
+                                <connections>
+                                    <action selector="askButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R1q-lD-vBQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="askButton" destination="KBR-xr-Nge" id="Vph-Ch-wfV"/>
                         <outlet property="ballView" destination="CkL-d4-Dfb" id="Yoq-5y-xQB"/>
                         <outlet property="titleLabel" destination="jIQ-Yq-dUK" id="BZF-YU-OZ9"/>
                     </connections>

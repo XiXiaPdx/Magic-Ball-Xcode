@@ -23,7 +23,10 @@ class RoundedButton: UIButton{
 }
 
 class ViewController: UIViewController {
+    
+    var randomAnswerIndex: Int = 0
 
+    @IBOutlet weak var askButton: RoundedButton!
     @IBOutlet weak var ballView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
@@ -35,7 +38,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func loadAnswerForBall (){
+        randomAnswerIndex = Int(arc4random_uniform(5))+1
+        ballView.image = UIImage(named:"ball\(randomAnswerIndex)")
+    }
 
-
+    @IBAction func askButton(_ sender: RoundedButton) {
+        loadAnswerForBall()
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        askButton.sendActions(for: .touchUpInside)
+    }
 }
 
